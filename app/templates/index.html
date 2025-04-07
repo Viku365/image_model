@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento de Dígitos</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Reconocimiento de Dígitos</h1>
+        
+        <div class="drawing-area">
+            <canvas id="drawingCanvas" width="280" height="280"></canvas>
+            <div class="controls">
+                <button id="clearButton" class="btn">Limpiar</button>
+                <button id="predictButton" class="btn">Predecir</button>
+            </div>
+        </div>
+
+        <div class="results">
+            <h2>Predicción</h2>
+            <div id="predictionResult" class="prediction-box">
+                <span class="digit">-</span>
+            </div>
+            <div id="confidence" class="confidence-bar">
+                <div class="confidence-fill"></div>
+            </div>
+            <p class="confidence-text">Confianza: <span id="confidenceValue">0%</span></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/drawing.js') }}"></script>
+</body>
+</html> 
